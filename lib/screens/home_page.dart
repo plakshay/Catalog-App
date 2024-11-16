@@ -51,16 +51,61 @@ class _HomePageState extends State<HomePage> {
           ),
           body: Padding(
             padding: const EdgeInsets.all(16.0),
-            child: (catalogModel.items!=null && catalogModel.items.isNotEmpty)?ListView.builder(
-              itemCount: catalogModel.items.length,
-              itemBuilder: (context,index){ // it represents how the item will be displayed on the screen 
-                return ItemWidget( item: catalogModel.items[index], );
+            child: (catalogModel.items!=null && catalogModel.items.isNotEmpty)?
+
+            // ListView.builder(
+            //   itemCount: catalogModel.items.length,
+            //   itemBuilder: (context,index){ // it represents how the item will be displayed on the screen 
+            //     return ItemWidget( item: catalogModel.items[index], );
+            //   },
+            // ) now we will use grid view builder
+
+            GridView.builder(
+              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount( // ratt lo
+                crossAxisCount: 2, // crossaxiscount is used to tell number of items in a row( if row -> vertical, column -> horizontal (opp))
+                mainAxisSpacing: 16,
+                crossAxisSpacing: 16
+                ),  // it is used to tell how many items are to be put in a row
+              itemBuilder: (context,index){
+                final item = catalogModel.items[index];
+                return Card(
+                  clipBehavior: Clip.antiAlias,
+                  shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+                  child: GridTile(
+                    header: Container(
+                      child: Text(item.name,
+                      style: TextStyle(
+                        color: Colors.white,
+                      ),),
+                      padding: EdgeInsets.all(12),
+                      decoration: BoxDecoration(
+                        color: Colors.deepPurple
+                      ),
+                      ),
+
+                    child: Image.network(item.image),
+
+                    footer: Container(
+                      child: Text("\$ ${item.price.toString()}",
+                      style: TextStyle(
+                        color: Colors.white,
+                      ),),
+                      padding: EdgeInsets.all(12),
+                      decoration: BoxDecoration(
+                        color: Colors.black
+                      ),
+                      ),
+                    )
+                  );
               },
-            ) 
-            :Center(
+
+              itemCount: catalogModel.items.length,
+              ):Center(
               child: CircularProgressIndicator(),
             ),
           ),
+
+
         drawer: MyDrawer(),
         );
 }
