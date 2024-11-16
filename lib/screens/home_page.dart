@@ -22,6 +22,7 @@ class _HomePageState extends State<HomePage> {
   }
 
   loadData()async{
+    await Future.delayed(Duration(seconds: 2));
     var catalogJson =await rootBundle.loadString("assets/files/catalog.json"); // this is used to read the data from the json files in the form of strings
     // loadstring is a future method so it might take time therefore we use await 
 
@@ -30,12 +31,19 @@ class _HomePageState extends State<HomePage> {
 
     var decodeData = jsonDecode(catalogJson);
     var productData = decodeData ["products"];
-    print (productData);
+    catalogModel.items = 
+    List.from(productData).
+    map<Item>((item)=> //item is the name of the map
+    Item.fromMap(item)).
+    toList(); 
+    // list (from product data) -> map with the catalog model -> convert the mapping again to list
+    setState(() {
+    });
   }
 
   @override
   Widget build(BuildContext context) {
-    final dummyList= List.generate(10, (index)=>catalogModel.items[0]);
+   
     return  Scaffold(
           appBar: AppBar(
             title: Text("Catalog App",),
@@ -43,11 +51,14 @@ class _HomePageState extends State<HomePage> {
           ),
           body: Padding(
             padding: const EdgeInsets.all(16.0),
-            child: ListView.builder(
-              itemCount: dummyList.length,
+            child: (catalogModel.items!=null && catalogModel.items.isNotEmpty)?ListView.builder(
+              itemCount: catalogModel.items.length,
               itemBuilder: (context,index){ // it represents how the item will be displayed on the screen 
-                return ItemWidget( item: dummyList[index], );
+                return ItemWidget( item: catalogModel.items[index], );
               },
+            ) 
+            :Center(
+              child: CircularProgressIndicator(),
             ),
           ),
         drawer: MyDrawer(),

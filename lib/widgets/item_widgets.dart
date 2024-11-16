@@ -11,11 +11,12 @@ class ItemWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
+      color: Colors.white,
       child: ListTile(
         onTap: () {
           print("${item.name} pressed");
         },
-        leading: Image.asset("assets/images/pfp.jpg"), //left of the screen 
+        leading: Image.network(item.image), //left of the screen // item.image = key
         title: Text(item.name),//dynamic item name
         subtitle: Text("nice product"),
         trailing: Text("\$ ${item.price}",
