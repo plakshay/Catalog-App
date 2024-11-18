@@ -1,0 +1,83 @@
+{   
+    "products":[
+    {
+        "id": 1,
+        "name": "Mi 11",
+        "desc": "Xiaomi Mi 11 256GB",
+        "price": 749,
+        "color": "#ffa500",
+        "image": "https://www.maplestore.in/cdn/shop/files/iPhone_14_Blue_PDP_Image_Position-1A__WWEN_43b0347b-c716-4297-b1d4-a15af53ad270.jpg?v=1701815316"
+    },
+    {
+        "id": 2,
+        "name": "iPhone 14",
+        "desc": "Apple iPhone 14 128GB",
+        "price": 999,
+        "color": "#000000",
+        "image": "https://www.maplestore.in/cdn/shop/files/iPhone_14_Blue_PDP_Image_Position-1A__WWEN_43b0347b-c716-4297-b1d4-a15af53ad270.jpg?v=1701815316"
+    },
+    {
+        "id": 3,
+        "name": "Galaxy S22",
+        "desc": "Samsung Galaxy S22 128GB",
+        "price": 849,
+        "color": "#1e90ff",
+        "image": "https://www.maplestore.in/cdn/shop/files/iPhone_14_Blue_PDP_Image_Position-1A__WWEN_43b0347b-c716-4297-b1d4-a15af53ad270.jpg?v=1701815316"
+    },
+    {
+        "id": 4,
+        "name": "OnePlus 11",
+        "desc": "OnePlus 11 256GB",
+        "price": 729,
+        "color": "#ff0000",
+        "image": "https://www.maplestore.in/cdn/shop/files/iPhone_14_Blue_PDP_Image_Position-1A__WWEN_43b0347b-c716-4297-b1d4-a15af53ad270.jpg?v=1701815316"
+    },
+    {
+        "id": 5,
+        "name": "Pixel 7",
+        "desc": "Google Pixel 7 128GB",
+        "price": 599,
+        "color": "#32cd32",
+        "image": "https://www.maplestore.in/cdn/shop/files/iPhone_14_Blue_PDP_Image_Position-1A__WWEN_43b0347b-c716-4297-b1d4-a15af53ad270.jpg?v=1701815316"
+    },
+    {
+        "id": 6,
+        "name": "Sony Xperia 5",
+        "desc": "Sony Xperia 5 III 128GB",
+        "price": 799,
+        "color": "#800080",
+        "image": "https://www.maplestore.in/cdn/shop/files/iPhone_14_Blue_PDP_Image_Position-1A__WWEN_43b0347b-c716-4297-b1d4-a15af53ad270.jpg?v=1701815316"
+    },
+    {
+        "id": 7,
+        "name": "Huawei P50",
+        "desc": "Huawei P50 Pro 256GB",
+        "price": 649,
+        "color": "#ffd700",
+        "image": "https://www.maplestore.in/cdn/shop/files/iPhone_14_Blue_PDP_Image_Position-1A__WWEN_43b0347b-c716-4297-b1d4-a15af53ad270.jpg?v=1701815316"
+    },
+    {
+        "id": 8,
+        "name": "Redmi Note 12",
+        "desc": "Xiaomi Redmi Note 12 128GB",
+        "price": 299,
+        "color": "#4682b4",
+        "image": "https://www.maplestore.in/cdn/shop/files/iPhone_14_Blue_PDP_Image_Position-1A__WWEN_43b0347b-c716-4297-b1d4-a15af53ad270.jpg?v=1701815316"
+    },
+    {
+        "id": 9,
+        "name": "Moto G Power",
+        "desc": "Motorola Moto G Power 64GB",
+        "price": 199,
+        "color": "#708090",
+        "image": "https://www.maplestore.in/cdn/shop/files/iPhone_14_Blue_PDP_Image_Position-1A__WWEN_43b0347b-c716-4297-b1d4-a15af53ad270.jpg?v=1701815316"
+    },
+    {
+        "id": 10,
+        "name": "Realme GT",
+        "desc": "Realme GT Neo 3 256GB",
+        "price": 499,
+        "color": "#ff4500",
+        "image": "https://www.maplestore.in/cdn/shop/files/iPhone_14_Blue_PDP_Image_Position-1A__WWEN_43b0347b-c716-4297-b1d4-a15af53ad270.jpg?v=1701815316"}
+]
+}
