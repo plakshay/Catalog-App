@@ -2,10 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'dart:convert'; // this gives json decoder and encoder so that we can read the data from the json and map it according to needs
 import 'package:target10days/models/catalog.dart';
-import 'package:target10days/widgets/drawer.dart';
+import 'package:target10days/widgets/home_widgets/catalog_header.dart';
+import 'package:target10days/widgets/home_widgets/catalog_list.dart';
 import 'package:target10days/widgets/themes.dart';
 import 'package:velocity_x/velocity_x.dart';
-import '../widgets/item_widgets.dart';
+
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -118,11 +119,10 @@ class _HomePageState extends State<HomePage> {
               children: [
                 CatalogHeader(),
                 if(catalogModel.items!= null && catalogModel.items.isNotEmpty )
-                  CatalogList().expand()
+                  CatalogList().py16().expand()
                 else
-                  Center(
-                    child: CircularProgressIndicator(),
-                  )  
+                   CircularProgressIndicator().centered().py20().expand(),// expand is used in order to make it in center
+                  
               ],
             ),
           ),
@@ -131,115 +131,3 @@ class _HomePageState extends State<HomePage> {
 }
 }
 
-
-class CatalogHeader extends StatelessWidget {
-  const CatalogHeader({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-              crossAxisAlignment:CrossAxisAlignment.start,
-              children: [
-                 Text("Catalog App",
-                 style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    fontSize: 30.0,
-                    color: Color.fromARGB(255, 16, 0, 96),
-                 ),
-                ),
-                Text("Trending Products")
-              ],
-            );
-  }
-}
-
-
-
-class CatalogList extends StatelessWidget {
-  const CatalogList({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return ListView.builder(
-      shrinkWrap: true, //With shrinkWrap: true, you can change this behavior so that the ListView only occupies the space it needs (it will still scroll when there more items).
-        itemCount: catalogModel.items.length,
-        itemBuilder: (context, index) {
-          final catalog = catalogModel.items[index];
-          return CatalogItem (
-            catalog :catalog
-            );
-        },
-    );
-  }
-}
-
-
-
-class CatalogItem extends StatelessWidget {
-  final Item catalog;
-  const CatalogItem({ Key? key, required this.catalog}): 
-  assert(catalog!=null) ,
-  super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return VxBox(
-      child: Row(
-        children: [
-          CatalogImage(image: catalog.image),
-          Expanded(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                catalog.name.text.bold.lg.color(MyTheme.darkblueColor).make(),
-                catalog.desc.text.textStyle(context.captionStyle).make(),
-                SizedBox(
-                  height: 20
-                  ,
-                ),
-                ButtonBar(
-                  alignment: MainAxisAlignment.spaceBetween,
-                  buttonPadding: EdgeInsets.zero,
-                  children: [
-                    "\$ ${catalog.price}".text.bold.xl.make(),
-                    ElevatedButton( 
-                      style: ElevatedButton.styleFrom(
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(8.0),
-                        ),
-                        backgroundColor: MyTheme.darkblueColor,
-                        
-                      ),
-                    onPressed: () {
-                      print("hi");
-                    }, child: "Buy".text.white.make())
-                  ],
-                ).pOnly(right: 8.0)
-              ],
-            ),
-          ) 
-
-        ],
-        
-      )
-    ).white.roundedLg.square(150).make().py16(); // vx code box made, works same as the container 
-  }
-}
-
-
-class CatalogImage extends StatelessWidget {
-
-  final String image;
-
-  const CatalogImage({super.key, required this.image});
- 
-  
-  @override
-  Widget build(BuildContext context) {
-    return Image.network(image).box.rounded.p16// padding that comes insisde
-          .color(MyTheme.creamColor).make().p16().
-          w40(context);// padding that comes outside
-          // box.make is same as wrapping the image with a container
-  }
-}
