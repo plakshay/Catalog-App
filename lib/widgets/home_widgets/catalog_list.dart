@@ -68,7 +68,7 @@ class CatalogItem extends StatelessWidget {
                     ElevatedButton( 
                       style: ElevatedButton.styleFrom(
                         shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(8.0),
+                          borderRadius: BorderRadius.circular(20.0),
                         ),
                         backgroundColor: MyTheme.darkblueColor,
                         

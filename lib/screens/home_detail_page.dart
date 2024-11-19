@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:target10days/models/catalog.dart';
 import 'package:target10days/widgets/themes.dart';
 import 'package:velocity_x/velocity_x.dart';
@@ -16,8 +17,15 @@ class HomeDetailsPage extends StatelessWidget {
 
   @override 
   Widget build(BuildContext context) {
+    // SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle.dark.copyWith(
+    //   statusBarColor: Colors.transparent, // Make status bar background transparent
+    //   statusBarIconBrightness: Brightness.dark, // Ensure the icons/text are dark (black)
+    // ));
     return Scaffold(
-      appBar: AppBar(),
+      
+      appBar: AppBar(
+        backgroundColor: Colors.transparent,
+      ),
       backgroundColor: MyTheme.creamColor ,
       bottomNavigationBar: Container(
         color: Colors.white,
@@ -36,7 +44,7 @@ class HomeDetailsPage extends StatelessWidget {
                         ),
                       onPressed: () {
                         
-                      }, child: "Buy".text.white.make()).wh(100, 50)
+                      }, child: "Add to Cart".text.white.make()).wh(125, 45)
                     ],
         ).p32(),
       ),
@@ -47,7 +55,7 @@ class HomeDetailsPage extends StatelessWidget {
             Hero(
               tag: Key(catalog.id.toString()),
               child: Image.network
-              (catalog.image),
+              (catalog.image).p16(),
               ).h32(context),
               Expanded (
                 child: VxArc(
@@ -65,6 +73,8 @@ class HomeDetailsPage extends StatelessWidget {
                         SizedBox(
                           height: 20,
                         ),
+                        "Vero vero ut est ut accusam diam et est sit. Diam erat stet sed ipsum lorem tempor, ea et no et sanctus eirmod sit ipsum, ipsum vero lorem est justo dolor duo clita, et consetetur rebum aliquyam labore. Sed erat nonumy et dolor accusam ipsum sanctus dolor dolor, elitr labore.".
+                        text.textStyle(context.captionStyle).make().p16(),
                       ],
                     ).py64(),
                   ),
