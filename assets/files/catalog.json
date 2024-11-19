@@ -6,7 +6,7 @@
         "desc": "Xiaomi Mi 11 256GB",
         "price": 749,
         "color": "#ffa500",
-        "image": "https://www.maplestore.in/cdn/shop/files/iPhone_14_Blue_PDP_Image_Position-1A__WWEN_43b0347b-c716-4297-b1d4-a15af53ad270.jpg?v=1701815316"
+        "image": "https://themayanagari.com/wp-content/uploads/2021/04/Xiaomi-Mi-11-Ultra-2.png"
     },
     {
         "id": 2,
@@ -14,7 +14,7 @@
         "desc": "Apple iPhone 14 128GB",
         "price": 999,
         "color": "#000000",
-        "image": "https://www.maplestore.in/cdn/shop/files/iPhone_14_Blue_PDP_Image_Position-1A__WWEN_43b0347b-c716-4297-b1d4-a15af53ad270.jpg?v=1701815316"
+        "image": "https://w7.pngwing.com/pngs/378/624/png-transparent-iphone-14-thumbnail.png"
     },
     {
         "id": 3,
@@ -22,7 +22,7 @@
         "desc": "Samsung Galaxy S22 128GB",
         "price": 849,
         "color": "#1e90ff",
-        "image": "https://www.maplestore.in/cdn/shop/files/iPhone_14_Blue_PDP_Image_Position-1A__WWEN_43b0347b-c716-4297-b1d4-a15af53ad270.jpg?v=1701815316"
+        "image": "https://i.pinimg.com/originals/50/4a/26/504a265979e46e7204b6d9260992daf1.png"
     },
     {
         "id": 4,
@@ -30,7 +30,7 @@
         "desc": "OnePlus 11 256GB",
         "price": 729,
         "color": "#ff0000",
-        "image": "https://www.maplestore.in/cdn/shop/files/iPhone_14_Blue_PDP_Image_Position-1A__WWEN_43b0347b-c716-4297-b1d4-a15af53ad270.jpg?v=1701815316"
+        "image": "https://oasis.opstatics.com/content/dam/oasis/page/2023/in/product/11/marble.png"
     },
     {
         "id": 5,
@@ -38,7 +38,7 @@
         "desc": "Google Pixel 7 128GB",
         "price": 599,
         "color": "#32cd32",
-        "image": "https://www.maplestore.in/cdn/shop/files/iPhone_14_Blue_PDP_Image_Position-1A__WWEN_43b0347b-c716-4297-b1d4-a15af53ad270.jpg?v=1701815316"
+        "image": "https://lh3.googleusercontent.com/D7svB11VfKSE0u4uV6UWGzWlcBlX7ew6A5E_mfZWcOTWYzMXbsDaPSWZDNq9C5ofiCp8kKVyI73Bcl9ry_R79HOPJnBRV1cidLE"
     },
     {
         "id": 6,
@@ -46,7 +46,7 @@
         "desc": "Sony Xperia 5 III 128GB",
         "price": 799,
         "color": "#800080",
-        "image": "https://www.maplestore.in/cdn/shop/files/iPhone_14_Blue_PDP_Image_Position-1A__WWEN_43b0347b-c716-4297-b1d4-a15af53ad270.jpg?v=1701815316"
+        "image": "https://image.similarpng.com/very-thumbnail/2020/08/Sony-Xperia-5-Plus-on-transparent-background-PNG.png"
     },
     {
         "id": 7,
@@ -54,7 +54,7 @@
         "desc": "Huawei P50 Pro 256GB",
         "price": 649,
         "color": "#ffd700",
-        "image": "https://www.maplestore.in/cdn/shop/files/iPhone_14_Blue_PDP_Image_Position-1A__WWEN_43b0347b-c716-4297-b1d4-a15af53ad270.jpg?v=1701815316"
+        "image": "https://w7.pngwing.com/pngs/272/406/png-transparent-huawei-p50-pocket-electronics-android-phones.png"
     },
     {
         "id": 8,
@@ -62,7 +62,7 @@
         "desc": "Xiaomi Redmi Note 12 128GB",
         "price": 299,
         "color": "#4682b4",
-        "image": "https://www.maplestore.in/cdn/shop/files/iPhone_14_Blue_PDP_Image_Position-1A__WWEN_43b0347b-c716-4297-b1d4-a15af53ad270.jpg?v=1701815316"
+        "image": "https://media.croma.com/image/upload/v1708669558/Croma%20Assets/Communication/Mobiles/Images/270907_0_bfbcvl.png"
     },
     {
         "id": 9,
@@ -70,7 +70,7 @@
         "desc": "Motorola Moto G Power 64GB",
         "price": 199,
         "color": "#708090",
-        "image": "https://www.maplestore.in/cdn/shop/files/iPhone_14_Blue_PDP_Image_Position-1A__WWEN_43b0347b-c716-4297-b1d4-a15af53ad270.jpg?v=1701815316"
+        "image": "https://lh3.googleusercontent.com/RGza2uVP4pBZnFyjKSrhVTtPp5cmYSSoyhX961M4wH-eZkzzS2Bl_8y2_Bt03pnsAZZGA3_GemzzIEBf72M-YaDKe-CyoyBv8w"
     },
     {
         "id": 10,
@@ -78,6 +78,6 @@
         "desc": "Realme GT Neo 3 256GB",
         "price": 499,
         "color": "#ff4500",
-        "image": "https://www.maplestore.in/cdn/shop/files/iPhone_14_Blue_PDP_Image_Position-1A__WWEN_43b0347b-c716-4297-b1d4-a15af53ad270.jpg?v=1701815316"}
+        "image": "https://img-prd-pim.poorvika.com/cdn-cgi/image/width=500,height=500,quality=75/product/realme-gt-6t-5g-razor-green-256gb-8gb-ram-front-view-modell.png"}
 ]
 }

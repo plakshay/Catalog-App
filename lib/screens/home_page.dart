@@ -1,7 +1,9 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'dart:convert'; // this gives json decoder and encoder so that we can read the data from the json and map it according to needs
 import 'package:target10days/models/catalog.dart';
+import 'package:target10days/utils/routes.dart';
 import 'package:target10days/widgets/home_widgets/catalog_header.dart';
 import 'package:target10days/widgets/home_widgets/catalog_list.dart';
 import 'package:target10days/widgets/themes.dart';
@@ -48,6 +50,17 @@ class _HomePageState extends State<HomePage> {
    
     return  Scaffold(
       backgroundColor: MyTheme.creamColor,
+      floatingActionButton: Material(
+          color: MyTheme.darkblueColor,
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(32), // Apply border radius
+          ),
+          child: FloatingActionButton(
+            onPressed: () =>  Navigator.pushNamed(context,MyRoutes.cartRoute), // on pressing the button it will take to the cart Page, usage of navigator
+            backgroundColor: Colors.transparent, // Set background color as transparent
+            child: Icon(CupertinoIcons.cart, color: Colors.white),
+          ),
+        ),
           // appBar: AppBar(
           //   title: Text("Catalog App",),
           //   centerTitle: true,
