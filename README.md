@@ -1,4 +1,4 @@
-# target10days
+# Catalog App
 
 A new Flutter project.
 
