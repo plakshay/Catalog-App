@@ -14,7 +14,7 @@ class CatalogImage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Image.network(image).box.rounded.p16// padding that comes insisde
-          .color(MyTheme.creamColor).make().p16().
+          .color(context.canvasColor).make().p16().
           w40(context);// padding that comes outside
           // box.make is same as wrapping the image with a container
   }

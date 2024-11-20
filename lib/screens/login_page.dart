@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:target10days/screens/cart_page.dart';
 import 'package:target10days/utils/routes.dart';
+import 'package:target10days/widgets/themes.dart';
+import 'package:velocity_x/velocity_x.dart';
  class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
 
@@ -29,7 +32,7 @@ class _LoginPageState extends State<LoginPage> {
   
   Widget build(BuildContext context) {
     return Material(
-      color: Colors.white,
+      color: context.canvasColor,
       child : SingleChildScrollView( // single child scroll view is used in order to scroll thorugh the pages and avoid the overflow or distortion of UI in smaller screens
         child: Form(
           key: _formkey,
@@ -94,7 +97,7 @@ class _LoginPageState extends State<LoginPage> {
           
                       // login button
                     Material(
-                      color:Colors.deepPurple,
+                      color: MyTheme.darkblueColor,
                       borderRadius: BorderRadius.circular(changeButton? 50:8),
                       child: InkWell( //to make it clickable : two options- 1. inkwell  2. gesturedetector - gives no response/ no ripple effect in the UI
                         onTap: () => moveToHome(context), 

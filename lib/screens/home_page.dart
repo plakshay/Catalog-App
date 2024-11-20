@@ -49,7 +49,7 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
    
     return  Scaffold(
-      backgroundColor: MyTheme.creamColor,
+      backgroundColor: context.canvasColor,
       floatingActionButton: Material(
           color: MyTheme.darkblueColor,
           shape: RoundedRectangleBorder(
