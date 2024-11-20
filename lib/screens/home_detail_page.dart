@@ -21,14 +21,15 @@ class HomeDetailsPage extends StatelessWidget {
     //   statusBarColor: Colors.transparent, // Make status bar background transparent
     //   statusBarIconBrightness: Brightness.dark, // Ensure the icons/text are dark (black)
     // ));
+    final accentColor = Theme.of(context).colorScheme.secondary;
     return Scaffold(
       
       appBar: AppBar(
         backgroundColor: Colors.transparent,
       ),
-      backgroundColor: MyTheme.creamColor ,
+      backgroundColor: context.canvasColor ,
       bottomNavigationBar: Container(
-        color: Colors.white,
+        color:context.cardColor,
         child: ButtonBar(
           alignment: MainAxisAlignment.spaceBetween,
                     buttonPadding: EdgeInsets.zero,
@@ -64,11 +65,11 @@ class HomeDetailsPage extends StatelessWidget {
                   edge: VxEdge.top,
                   
                   child: Container(
-                    color: Colors.white,
+                    color: context.cardColor,
                     width: context.screenWidth,
                     child: Column(
                       children: [
-                        catalog.name.text.bold.xl4.color(MyTheme.darkblueColor).make(),
+                        catalog.name.text.bold.xl4.color(accentColor).make(),
                         catalog.desc.text.xl.textStyle(context.captionStyle).make(),
                         SizedBox(
                           height: 20,

@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:target10days/widgets/themes.dart';
+import 'package:velocity_x/velocity_x.dart';
 
 
 
@@ -8,6 +10,7 @@ class CatalogHeader extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final accentColor = Theme.of(context).colorScheme.secondary;
     return Column(
               crossAxisAlignment:CrossAxisAlignment.start,
               children: [
@@ -15,7 +18,7 @@ class CatalogHeader extends StatelessWidget {
                  style: TextStyle(
                     fontWeight: FontWeight.bold,
                     fontSize: 30.0,
-                    color: Color.fromARGB(255, 16, 0, 96),
+                    color: accentColor,
                  ),
                 ),
                 Text("Trending Products")

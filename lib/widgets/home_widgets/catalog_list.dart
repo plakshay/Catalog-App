@@ -36,12 +36,14 @@ class CatalogList extends StatelessWidget {
 
 class CatalogItem extends StatelessWidget {
   final Item catalog;
-  const CatalogItem({ Key? key, required this.catalog}): 
+   CatalogItem({ Key? key, required this.catalog}): 
   assert(catalog!=null) ,
   super(key: key);
 
   @override
+  
   Widget build(BuildContext context) {
+    final accentColor = Theme.of(context).colorScheme.secondary;
     return VxBox(
       child: Row(
         children: [
@@ -54,7 +56,7 @@ class CatalogItem extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                catalog.name.text.bold.lg.color(MyTheme.darkblueColor).make(),
+                catalog.name.text.bold.lg.color(accentColor).make(),
                 catalog.desc.text.textStyle(context.captionStyle).make(),
                 SizedBox(
                   height: 20
@@ -85,6 +87,6 @@ class CatalogItem extends StatelessWidget {
         ],
         
       )
-    ).white.roundedLg.square(150).make().py16(); // vx code box made, works same as the container 
+    ).color(context.cardColor).roundedLg.square(150).make().py16(); // vx code box made, works same as the container 
   }
 }
