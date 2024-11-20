@@ -1,13 +1,14 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
+import 'package:target10days/widgets/home_widgets/addtocart.dart';
 import 'package:velocity_x/velocity_x.dart';
 
-import 'package:target10days/models/cart.dart';
+
 import 'package:target10days/models/catalog.dart';
 import 'package:target10days/screens/home_detail_page.dart';
 import 'package:target10days/widgets/home_widgets/catalog_image.dart';
 
-import '../themes.dart';
+
 
 class CatalogList extends StatelessWidget {
   const CatalogList({super.key});
@@ -69,7 +70,7 @@ class CatalogItem extends StatelessWidget {
                   buttonPadding: EdgeInsets.zero,
                   children: [
                     "\$ ${catalog.price}".text.bold.xl.make(),
-                    _AddtoCart(catalog :catalog)
+                    AddtoCart(catalog :catalog)
                   ],
                 ).pOnly(right: 8.0)
               ],
@@ -83,39 +84,3 @@ class CatalogItem extends StatelessWidget {
   }
 }
 
-class _AddtoCart extends StatefulWidget {
- final Item catalog;
-  const _AddtoCart({
-    Key? key,
-    required this.catalog,
-  }) : super(key: key);
-
-  @override
-  State<_AddtoCart> createState() => _AddtoCartState();
-}
-
-class _AddtoCartState extends State<_AddtoCart> {
-  bool isAdded = false; // it is a variable that is made to check id it is added to cart
-  @override
-  Widget build(BuildContext context) {
-    return ElevatedButton( 
-      style: ElevatedButton.styleFrom(
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(20.0),
-        ),
-        backgroundColor: MyTheme.darkblueColor, 
-      ),
-    onPressed: () {
-      isAdded = isAdded.toggle();
-      final _catalog =catalogModel();
-      final _cart = CartModel();
-      _cart.catalog = _catalog;
-      _cart.add(widget.catalog);
-
-      setState(() {
-       // CHANGES THE STATE and calls the build method again 
-      });
-    }, 
-    child: isAdded?Icon(Icons.done):"Buy".text.white.make());
-  }
-}
