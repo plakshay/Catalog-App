@@ -52,10 +52,17 @@ class cartTotal extends StatelessWidget {
                         backgroundColor: MyTheme.darkblueColor,
                         
                       ),
-            onPressed: (){}, 
+            onPressed: (){
+              ScaffoldMessenger.of(context).showSnackBar(
+              SnackBar(
+                content :"Buying not supported yet...".text.make(),
+              ),
+              );
+            }, 
             child: Text("Buy",
             style: TextStyle(
-              color: context.cardColor,
+              color: Colors.white
+              
             ),
             )
             ).w32(context)
