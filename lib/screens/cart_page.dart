@@ -19,6 +19,73 @@ class CartPage extends StatelessWidget {
                   ),
             ),
         ),
+        body: Column(
+          children: [
+            cartList().p32().expand(),
+            Divider(),
+            cartTotal(),
+
+          ],
+        )
     );  // scaffold gives us basic functionalities like appBar, bottomnavigator, drawer, floatingActionButton
+  }
+}
+
+class cartTotal extends StatelessWidget {
+  const cartTotal({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    final accentColor = Theme.of(context).colorScheme.secondary;
+    return SizedBox(
+      height: 200,
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceAround,
+        children: [
+          "\$9999".text.xl5.color(accentColor).make(),
+          30.widthBox,
+         ElevatedButton(
+          style: ElevatedButton.styleFrom(
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(20.0),
+                        ),
+                        backgroundColor: MyTheme.darkblueColor,
+                        
+                      ),
+            onPressed: (){}, 
+            child: Text("Buy",
+            style: TextStyle(
+              color: context.cardColor,
+            ),
+            )
+            ).w32(context)
+        ],
+      ),
+    );
+  }
+}
+
+
+
+class cartList extends StatefulWidget { // statefull because we will add a button so that the item can be removed from the cart
+  const cartList({super.key});
+
+  @override
+  State<cartList> createState() => _cartListState();
+}
+
+class _cartListState extends State<cartList> {
+  @override
+  Widget build(BuildContext context) {
+    return ListView.builder(
+      itemCount: 5,
+      itemBuilder: (context, index) => ListTile(
+        leading: Icon(Icons.done),
+        trailing: IconButton(onPressed: (){}, 
+        icon: Icon(Icons.remove_circle_outline)
+        ),
+        title: "Item 1".text.make(),
+      ),
+    );
   }
 }
