@@ -15,6 +15,11 @@ class MyTheme{
             iconTheme: IconThemeData(
               color:Colors.black,
             ),
+            titleTextStyle: TextStyle(
+            color: Colors.black,
+            fontSize: 25,
+            fontWeight: FontWeight.bold,
+          ),
           ),
           elevatedButtonTheme: ElevatedButtonThemeData(
           style: ElevatedButton.styleFrom(
@@ -40,6 +45,11 @@ class MyTheme{
             iconTheme: IconThemeData(
               color:const Color.fromARGB(255, 255, 255, 255),
             ),
+            titleTextStyle: TextStyle(
+            color: Colors.white,
+            fontSize: 25,
+            fontWeight: FontWeight.bold,
+          ),
             ),
              elevatedButtonTheme: ElevatedButtonThemeData(
           style: ElevatedButton.styleFrom(
