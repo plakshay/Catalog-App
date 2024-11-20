@@ -4,6 +4,14 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 
 class catalogModel{
+
+  static final CatalogModel = catalogModel._internal(); // singleton class model, it is created when the model is created multiple times in a code so that when we call a class, the same model is called and it doesnt refresh the complete things
+
+  catalogModel._internal();
+  factory catalogModel()=> CatalogModel; // factory is a constructor that returns the instance of an existing class instead of creating a new one
+
+
+
   static List<Item> items=[];
     // Item(
     //   id: 1,
