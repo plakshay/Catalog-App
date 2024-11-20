@@ -1,8 +1,10 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'dart:convert';
 
+import 'package:flutter/material.dart';
+
 class catalogModel{
-  static List<Item> items =[
+  static List<Item> items=[];
     // Item(
     //   id: 1,
     //   name: "Mi 11",
@@ -11,7 +13,15 @@ class catalogModel{
     //   color: "#ffa500",
     //   image: "https://example.com/images/mi11.png"
     // ) IRL this is generally empty
-  ];
+
+
+    // Get item by ID   
+    Item getById(int id) => // function has been created from which the item will be selected whose id will be passed as the parameter
+      items.firstWhere((element)=> element.id==id, orElse: null);
+
+    // Get item by position
+    Item getByPosition(int pos) => items[pos];  
+  
 }
 class Item {
   final int id;
