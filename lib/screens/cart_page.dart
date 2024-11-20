@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:target10days/models/cart.dart';
 import 'package:target10days/screens/home_detail_page.dart';
 import 'package:target10days/widgets/themes.dart';
 import 'package:velocity_x/velocity_x.dart';
@@ -33,16 +34,17 @@ class CartPage extends StatelessWidget {
 
 class cartTotal extends StatelessWidget {
   const cartTotal({super.key});
-
+  
   @override
   Widget build(BuildContext context) {
+    final _cart = CartModel(); // in stateless widgets, variables are declared and called withing buildcontext, but in statefull it is declared outside
     final accentColor = Theme.of(context).colorScheme.secondary;
     return SizedBox(
       height: 200,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
-          "\$9999".text.xl5.color(accentColor).make(),
+          "\$${_cart.totalprice}".text.xl5.color(accentColor).make(),
           30.widthBox,
          ElevatedButton(
           style: ElevatedButton.styleFrom(
@@ -82,16 +84,18 @@ class cartList extends StatefulWidget { // statefull because we will add a butto
 }
 
 class _cartListState extends State<cartList> {
+  final _cart = CartModel();
+
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
-      itemCount: 5,
+      itemCount: _cart.items?.length,
       itemBuilder: (context, index) => ListTile(
         leading: Icon(Icons.done),
         trailing: IconButton(onPressed: (){}, 
         icon: Icon(Icons.remove_circle_outline)
         ),
-        title: "Item 1".text.make(),
+        title: _cart.items[index].name.text.make(),
       ),
     );
   }

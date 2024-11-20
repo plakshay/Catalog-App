@@ -1,14 +1,23 @@
 import 'package:target10days/models/catalog.dart';
 
 class CartModel {
-  // Catalog field
-  catalogModel _catalog; // _xyz represents that it is private, we get it using a getter method
+
+
+  static final cartModel = CartModel._internal(); // singleton class model, it is created when the model is created multiple times in a code so that when we call a class, the same model is called and it doesnt refresh the complete things
+
+  CartModel._internal();
+  factory CartModel()=> cartModel; // factory is a constructor that returns the instance of an existing class instead of creating a new one
+
+
+
+  // Catalog field // default instialization of constructor
+   catalogModel _catalog = catalogModel(); // _xyz represents that it is private, we get it using a getter method
 
   // Collection of IDs - store IDs of each item
   final List<int> _itemIds = [];
 
   // Constructor
-  CartModel(this._catalog);
+  // CartModel(this._catalog);
 
   catalogModel get catalog => _catalog;
 
