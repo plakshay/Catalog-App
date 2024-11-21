@@ -76,16 +76,8 @@ class cartTotal extends StatelessWidget {
 
 
 
-class cartList extends StatefulWidget { // statefull because we will add a button so that the item can be removed from the cart
-  const cartList({super.key});
-
-  @override
-  State<cartList> createState() => _cartListState();
-}
-
-class _cartListState extends State<cartList> {
-  final _cart = CartModel();
-
+class cartList extends StatelessWidget{ 
+ final _cart = CartModel();
   @override
   Widget build(BuildContext context) {
      if (_cart.items == null || _cart.items.isEmpty) {
@@ -98,8 +90,7 @@ class _cartListState extends State<cartList> {
         leading: Icon(Icons.done),
         trailing: IconButton(onPressed: (){
           _cart.remove(_cart.items[index]);
-          setState(() {
-          });
+          
         }, 
         icon: Icon(Icons.remove_circle_outline)
         ),

@@ -5,24 +5,20 @@ import 'package:target10days/models/catalog.dart';
 import 'package:target10days/widgets/themes.dart';
 import 'package:velocity_x/velocity_x.dart';
 
-class AddtoCart extends StatefulWidget {
+class AddtoCart extends StatelessWidget {
  final Item catalog;
-  const AddtoCart({
+   AddtoCart({
     Key? key,
     required this.catalog,
   }) : super(key: key);
 
-  @override
-  State<AddtoCart> createState() => _AddtoCartState();
-}
-
-class _AddtoCartState extends State<AddtoCart> {
+  
   final _cart = CartModel();
    
   @override
   Widget build(BuildContext context) {
 
-    bool isInCart = _cart.items.contains(widget.catalog) ?? false;// it is a variable that is made to check id it is added to cart
+    bool isInCart = _cart.items.contains(catalog) ?? false;// it is a variable that is made to check id it is added to cart
 
     return ElevatedButton( 
       style: ElevatedButton.styleFrom(
@@ -37,11 +33,9 @@ class _AddtoCartState extends State<AddtoCart> {
       final _catalog =catalogModel();
       
       _cart.catalog = _catalog;
-      _cart.add(widget.catalog);
+      _cart.add(catalog);
 
-      setState(() {
-       // CHANGES THE STATE and calls the build method again 
-      });}
+      }
     }, 
     child: isInCart?Icon(Icons.done):Icon(CupertinoIcons.cart_badge_plus));
   }
