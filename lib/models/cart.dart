@@ -3,12 +3,12 @@ import 'package:target10days/models/catalog.dart';
 class CartModel {
 
 
-  static final cartModel = CartModel._internal(); // singleton class model, it is created when the model is created multiple times in a code so that when we call a class, the same model is called and it doesnt refresh the complete things
+  // static final cartModel = CartModel._internal(); // singleton class model, it is created when the model is created multiple times in a code so that when we call a class, the same model is called and it doesnt refresh the complete things
 
-  CartModel._internal();
-  factory CartModel()=> cartModel; // factory is a constructor that returns the instance of an existing class instead of creating a new one
+  // CartModel._internal();
+  // factory CartModel()=> cartModel; // factory is a constructor that returns the instance of an existing class instead of creating a new one
 
-
+// creating singleton is a bad practise
 
   // Catalog field // default instialization of constructor
    catalogModel _catalog = catalogModel(); // _xyz represents that it is private, we get it using a getter method
