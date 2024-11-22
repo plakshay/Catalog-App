@@ -16,3 +16,6 @@ class MyStore extends VxStore{ // MyStore stores the information of the models t
 
 
 }
+
+
+// with the use of store, we will not be required to make the models again and again , we will have to call an object of the store(class/catalog)

@@ -1,11 +1,12 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:target10days/core/store.dart';
 import 'package:target10days/models/cart.dart';
 import 'package:target10days/models/catalog.dart';
 import 'package:target10days/widgets/themes.dart';
 import 'package:velocity_x/velocity_x.dart';
 
-class AddtoCart extends StatelessWidget {
+class AddtoCart extends StatelessWidget { // this is the button which needs to rebuild its state with every click 
  final Item catalog;
    AddtoCart({
     Key? key,
@@ -13,11 +14,14 @@ class AddtoCart extends StatelessWidget {
   }) : super(key: key);
 
   
-  final _cart = CartModel();
+
    
   @override
   Widget build(BuildContext context) {
 
+    // VxState.listen(context, to :[]);
+
+    final CartModel _cart = (VxState.store as MyStore).cart;
     bool isInCart = _cart.items.contains(catalog) ?? false;// it is a variable that is made to check id it is added to cart
 
     return ElevatedButton( 
