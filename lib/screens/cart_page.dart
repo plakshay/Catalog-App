@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:target10days/core/store.dart';
 import 'package:target10days/models/cart.dart';
 import 'package:target10days/screens/home_detail_page.dart';
 import 'package:target10days/widgets/themes.dart';
@@ -37,7 +38,10 @@ class cartTotal extends StatelessWidget {
   
   @override
   Widget build(BuildContext context) {
-    final _cart = CartModel(); // in stateless widgets, variables are declared and called withing buildcontext, but in statefull it is declared outside
+    // final _cart = CartModel(); // in stateless widgets, variables are declared and called withing buildcontext, but in statefull it is declared outside
+    // we will use store now
+
+    final CartModel _cart = (VxState.store as MyStore).cart;
     final accentColor = Theme.of(context).colorScheme.secondary;
     return SizedBox(
       height: 200,
@@ -77,9 +81,10 @@ class cartTotal extends StatelessWidget {
 
 
 class cartList extends StatelessWidget{ 
- final _cart = CartModel();
+ 
   @override
   Widget build(BuildContext context) {
+    final CartModel _cart = (VxState.store as MyStore).cart;
      if (_cart.items == null || _cart.items.isEmpty) {
       return "Nothing to show".text.xl3.makeCentered();
     } 
